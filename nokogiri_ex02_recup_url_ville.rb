@@ -16,15 +16,15 @@ def get_the_email_of_a_townhal_from_its_webpage(url)
 end
 
 def get_all_the_urls_of_val_doise_townhalls
-	hash_mairie = Hash.new
+	hash_town = Hash.new
 	page = Nokogiri::HTML(open("http://annuaire-des-mairies.com/val-d-oise.html"))
 	@array_link = []
 	list_url = page.css("a.lientxt")
 	list_url.each do |url|
 		good_link = "http://annuaire-des-mairies.com" + url['href'][1..url['href'].length]
-		hash_mairie[url.text] = get_the_email_of_a_townhal_from_its_webpage(good_link)
+		hash_town[url.text] = get_the_email_of_a_townhal_from_its_webpage(good_link)
 		#@array_link << good_link
 	end
-	return hash_mairie
+	return hash_town
 end
 puts get_all_the_urls_of_val_doise_townhalls
