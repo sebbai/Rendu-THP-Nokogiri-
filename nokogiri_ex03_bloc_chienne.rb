@@ -26,6 +26,7 @@ def crypto_currency
 		puts " "
 	    puts " "
 		puts " "
+		
 	end
 
 end
