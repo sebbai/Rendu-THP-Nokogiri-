@@ -18,7 +18,7 @@ def crypto_currency
 
 		i = array_stock_prices.length
 		puts array_stock_prices[i - 1]
-		sleep(5) # <= timer sur 3600 seconde(1 heure)
+		sleep(3600) # <= timer sur 3600 seconde(1 heure)
 		puts " "
 		puts " "
 		puts " "
