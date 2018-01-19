@@ -5,14 +5,12 @@ require 'open-uri'
 def get_the_email_of_a_townhal_from_its_webpage(url)
 	page = Nokogiri::HTML(open(url))
 
-	#@email_adress = ""
 	page.css("tr > td > p > font").each do |email|
 		if email.text.include?"@"
 			return email.text
-			#@array_link << email.text
 		end
 	end
-	#puts @array_link
+
 end
 
 def get_all_the_urls_of_val_doise_townhalls
